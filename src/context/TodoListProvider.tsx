@@ -2,14 +2,18 @@
 
 import React, { createContext, useReducer } from 'react'
 import { todoActions } from '../actions/actions'
+import { TodoList } from '../models/types/TodoList';
 
 import { TodoReducer } from '../reducer/reducer'
 
-export const TodoContext:any = createContext([]);
+const getItem = localStorage.getItem('todos') || []
+
+export const TodoContext:any = createContext(getItem);
+
+const storedTodos:TodoList[] = JSON.parse(localStorage.getItem('todos')) || [];
 
 const TodoListProvider = (props:any) => {
-
-  const [todos , dispatch] = useReducer(TodoReducer , []);
+  const [todos , dispatch] = useReducer(TodoReducer , storedTodos);
 
   const addTodo = (title:string):void => {
     dispatch({type : todoActions.ADD_TO_DO , payload : {title}})
