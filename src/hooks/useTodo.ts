@@ -11,6 +11,7 @@ export const useTodo = () => {
   };
   const handleSubmit = (e: any) => {
     e.preventDefault();
+    if(todoInput == '') return
     addTodo(todoInput)
     console.log('todo-input', todoInput);
     setTodoInput("");

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import { useTodo } from "../../hooks/useTodo";
+import { useTodos } from "../../hooks/useTodos";
 
 type Props = {
   setTodoLists: any;
@@ -7,6 +7,7 @@ type Props = {
 
 const TodoHeader = (props: Props) => {
   const {todoInput , handleSubmit , handleChange} = useTodo()
+  const {deleteAll} = useTodos()
   // const [inputValue, setInputValue] = useState<string>("");
 
   return (
@@ -21,6 +22,9 @@ const TodoHeader = (props: Props) => {
         />
         <button type="submit" className="add-todolist">
           +
+        </button>
+        <button type="submit" onClick={deleteAll} className="add-todolist">
+          Reset
         </button>
       </form>
     </div>

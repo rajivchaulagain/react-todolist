@@ -11,13 +11,13 @@ const TodoListProvider = (props:any) => {
 
   const [todos , dispatch] = useReducer(TodoReducer , []);
 
-  const addTodo = (title:string) => {
+  const addTodo = (title:string):void => {
     dispatch({type : todoActions.ADD_TO_DO , payload : {title}})
   }
-  const deleteById = (id:number) => {
-    dispatch({type : todoActions.DELETE_BY_ID , payload : id})
+  const deleteById = (id:number):void => {
+    dispatch({type : todoActions.DELETE_BY_ID , payload : {id}})
   }
-  const deleteAll = () => {
+  const deleteAll = ():void => {
     dispatch({type : todoActions.RESET})
   }
 
