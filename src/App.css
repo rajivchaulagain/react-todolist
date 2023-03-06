@@ -1,0 +1,22 @@
+/* todo-layout */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-header .input-field {
+    padding: 0.5rem;
+    border: 2px solid #eeeeee;
+    text-transform: capitalize;
+    width: 25rem !important;
+}
+
+.todo-header .add-todolist{
+    color: #fff;
+    background-color: purple;
+    padding: 0.4rem 0.75rem;
+    margin-left: 0.25rem;
+    font-size: 1rem;
+}
+
